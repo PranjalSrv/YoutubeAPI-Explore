@@ -35,7 +35,9 @@ def print_response(response):
   #print('Default Audio Language: ',response['items'][0]['snippet']['defaultAudioLanguage'])
   print('Statistics: ',response['items'][0]['statistics'])
   print('###############################')
+  return response['items'][0]['statistics']
 
+  
 # Build a resource based on a list of properties given as key-value pairs.
 # Leave properties with empty values out of the inserted resource.
 def build_resource(properties):
