@@ -52,9 +52,7 @@ def channels_list_by_username(service, df, **kwargs):
 def main(channelnames, channelids):
   totaljson = []
   service = get_authenticated_service()
-
-  channelnames = ['allindiabakchod','TheViralFeverVideos','KSIOlajidebt','teamcoco','DjWalkzz']
-
+  
   # df = pd.DataFrame(columns = ['Name', 'Subs', 'TotalViews', 'Genres', 'Link'])
   for channel in channelnames:
     views = []
@@ -62,18 +60,15 @@ def main(channelnames, channelids):
       forUsername=channel)
     for i in singlejson:
         totaljson.append(i)
-    #statplotting.plottingViews(views)
-
-
-  channelids = ['UCG8rbF3g2AMX70yOd8vqIZg','UCqwUrj10mAEsqezcItqvwEw','UCDySHzpIIlgxeexkVuFCiJg']
-
+    statplotting.plottingViews(views)
 
   for channel in channelids:
+      views = []
       singlejson, views = channels_list_by_username(service, df, part='snippet,contentDetails,statistics,status,topicDetails',
      id=channel)
       for i in singlejson:
           totaljson.append(i)
-    #statplotting.plottingViews(views)
+      statplotting.plottingViews(views)
 
   print(totaljson)
   jlist = []
