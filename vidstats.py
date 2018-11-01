@@ -27,14 +27,14 @@ def get_authenticated_service():
   return build(API_SERVICE_NAME, API_VERSION, credentials = credentials)
 
 def print_response(response):
-  #pprint(response)
-  #pprint(response['items'][0]['snippet'])
-  print('Video Title: ',response['items'][0]['snippet']['title'])
-  print('Video URL:',str( 'https://www.youtube.com/watch?v=') + str(response['items'][0]['id']))
-  print('Channel Name: ',response['items'][0]['snippet']['channelTitle'])
-  #print('Default Audio Language: ',response['items'][0]['snippet']['defaultAudioLanguage'])
-  print('Statistics: ',response['items'][0]['statistics'])
-  print('###############################')
+  # #pprint(response)
+  # #pprint(response['items'][0]['snippet'])
+  # print('Video Title: ',response['items'][0]['snippet']['title'])
+  # print('Video URL:',str( 'https://www.youtube.com/watch?v=') + str(response['items'][0]['id']))
+  # print('Channel Name: ',response['items'][0]['snippet']['channelTitle'])
+  # #print('Default Audio Language: ',response['items'][0]['snippet']['defaultAudioLanguage'])
+  # print('Statistics: ',response['items'][0]['statistics'])
+  # print('###############################')
   return response['items'][0]['statistics']
 
   
